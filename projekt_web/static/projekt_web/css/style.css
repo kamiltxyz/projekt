@@ -1,0 +1,96 @@
+/* body, html */
+
+body, html {
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: "Source Code Pro", monospace;
+}
+
+/* nav */
+
+nav {
+  height: 3em;
+  width: 100%;
+
+  font-weight: bold;
+  font-family: "Source Code Pro", monospace;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav-list {
+  margin-right: 2em;
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+/* container */
+
+.page_container {
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: 3em 1fr 2em;
+}
+
+.container {
+  height: calc(100% - 2em);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* footer */
+
+footer {
+
+  width: 100%;
+
+  line-height: 2.5em;
+  background: #e2e2e2;
+
+  font-size: .8em;
+  font-weight: bolder;
+  font-family: "Source Code Pro", monospace;
+
+  text-align: center;
+}
+
+/* frontpage */
+
+#frontpage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  font-size: .9em;
+  text-align: center;
+}
+
+#frontpage > header > h1 {
+  font-size: 2.6em;
+
+  margin-bottom: 0;
+}
+
+#frontpage > header > h5 {
+  margin-top: .4em;
+}
+
+#frontpage > nav {
+  justify-content: center;
+}
+
+#frontpage > nav > .nav-list {
+  margin: 0;
+  padding: 0;
+}

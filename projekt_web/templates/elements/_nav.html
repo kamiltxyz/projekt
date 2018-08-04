@@ -1,0 +1,14 @@
+<nav>
+  <ul class="nav-list">
+    <li class="nav-item"><a href="{% url 'frontpage' %}">frontpage</a></li>
+
+    {# <li class="nav-item"><a href="{% url 'create-project' %}">create project</a></li> #}
+    {# <li class="nav-item"><a href="{% url 'projects' %}">projects</a></li> #}
+
+    {% if user.is_authenticated %}
+      <li class="nav-item"><a href="{% url 'logout' %}">logout</a></li>
+    {% else %}
+      <li class="nav-item"><a href="{% url 'login' %}">login</a></li>
+    {% endif %}
+  </ul>
+</nav>

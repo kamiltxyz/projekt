@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'projekt_web/css/style.css' %}">
+
+  <title>Projekt - Time spent on projects. Measured</title>
+</head>
+<body>
+  <div class="page_container">
+  {% block nav %}{% include "elements/_nav.html" %}{% endblock %}
+
+  {% block content %}{% endblock %}
+
+  {% include "elements/_footer.html" %}
+  </div>
+</body>
+</html>
