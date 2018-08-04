@@ -1,2 +1,3 @@
-# personel
-nothing personel kiddo
+# projekt
+
+Time spent on projects. Measured
