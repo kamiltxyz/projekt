@@ -1,0 +1,11 @@
+# python-venv
+venv/
+
+# pycache
+__pycache__/
+
+# migrations
+migrations/
+
+# database
+*.sqlite3
