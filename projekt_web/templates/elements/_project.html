@@ -1,4 +1,4 @@
-<a href="#" class="project {% if project.finished == True %} is-finished {% else %} not-finished {% endif %}">
+<a href="{% url 'project_details' project_slug=project.slug %}" class="project {% if project.finished == True %} is-finished {% else %} not-finished {% endif %}">
   {# <a href="{% url 'delete' %}">delete project</a> #}
   {% if user.is_superuser %}
     <h5>project by {{ project.owner.username }}</h5>
