@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container" id="projects-list">
+
+  {% for project in projects %}
+    {% include "elements/_project.html" %}
+  {% endfor %}
+
+</div>
+{% endblock %}

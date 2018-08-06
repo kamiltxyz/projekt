@@ -1,0 +1,17 @@
+<a href="#" class="project {% if project.finished == True %} is-finished {% else %} not-finished {% endif %}">
+  {# <a href="{% url 'delete' %}">delete project</a> #}
+  {% if user.is_superuser %}
+    <h5>project by {{ project.owner.username }}</h5>
+  {% else %}
+    <h5></h5>
+  {% endif %}
+
+  <h1>{{ project.title }}</h1>
+  <h5>time spent: {{ project.time_spent }}</h5>
+
+  {% if project.finished == True %}
+    <div class="status is-finished">finished</div>
+  {% else %}
+    <div class="status not-finished">in progress</div>
+  {% endif %}
+</a>

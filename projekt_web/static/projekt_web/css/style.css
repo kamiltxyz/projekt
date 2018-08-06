@@ -42,6 +42,7 @@ nav {
 
 .container {
   height: calc(100% - 2em);
+  width: 100%;
 
   display: flex;
   align-items: center;
@@ -93,4 +94,81 @@ footer {
 #frontpage > nav > .nav-list {
   margin: 0;
   padding: 0;
+}
+
+/* projects */
+
+.project {
+  height: 100%;
+  max-width: 35em;
+  min-width: 420px;
+
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-rows: 3em 1fr 3em;
+
+  text-align: center;
+  text-decoration: none;
+
+  transition: all .5s;
+  background-size: 100% 200%;
+
+  color: black;
+}
+
+.project:hover {
+  color: white;
+  background-position: 0 -100%;
+}
+
+.project > h5 {
+  line-height: .5em;
+}
+
+.project > h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project > .status {
+  font-weight: bolder;
+
+  line-height: 2.8em;
+}
+
+.project > .is-finished {
+  background: #2f7d35;
+  color: white;
+}
+
+.project > .not-finished {
+  color: white;
+  background: #476ec3;
+}
+
+.project.is-finished {
+  background-image: linear-gradient(to bottom, white, 50%, #2f7d35 50%);
+}
+.project.is-finished:hover {
+  /* background:  */
+  color: white;
+}
+
+.project.not-finished {
+  background-image: linear-gradient(to bottom, white, 50%, #476ec3 50%);
+}
+
+.project.not-finished:hover {
+  /* background: #5f73db; */
+  color: white;
+}
+
+#projects-list {
+  height: 100%;
+
+  flex-direction: row;
+  justify-content: flex-start;
 }
