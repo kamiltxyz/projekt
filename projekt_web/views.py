@@ -47,7 +47,7 @@ def project_details(request, project_slug):
 
             if len(command) > 1:
                 if command[0] == 'as':
-                    if len(command) > 2:
+                    if len(command) >= 2:
                         create_step(project, command[1])
 
     else:

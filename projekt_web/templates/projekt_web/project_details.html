@@ -10,6 +10,10 @@
       <form method="post">
         {% csrf_token %}
 
+        {% for error in form.non_field_errors %}
+          <p>{{ error }}</p>
+        {% endfor %}
+
         {% for error in form.command.errors %}
           <p>{{ error }}</p>
         {% endfor %}
@@ -28,40 +32,18 @@
       </ul>
     </div>
     <div class="steps-table">
-      <div class="step">
-        <header>
-          <h1 class="outline red">step title</h1>
-          <br>
-          <h5>time spent: 00:00:00</h5>
-        </header>
+      {% for step in project.step_set.all %}
+        <div class="step">
+          <header>
+            <h1 class="outline red">{{ step.title }}</h1>
+            <br>
+            <h5>time spent: {{ step.title }}</h5>
+          </header>
 
-        <ul class="step-task-list">
-          <li class="step-task outline red">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-          <li class="step-task">do something(2hr)</li>
-          <br>
-        </ul>
-      </div>
+          <ul class="step-task-list">
+          </ul>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>

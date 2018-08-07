@@ -13,16 +13,9 @@ def get_random_color():
 
 
 def create_step(project, step_title):
-    step = Step()
+    project.step_set.create(title=step_title)
 
-    step.title = step_title;
-    step.project = project
-
-    step.save()
-
-    project.step_set.add(step)
-
-
+    
 # Projects
 class Project(models.Model):
     title = models.CharField(unique=True, max_length=256)
