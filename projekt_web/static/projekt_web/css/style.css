@@ -172,3 +172,145 @@ footer {
   flex-direction: row;
   justify-content: flex-start;
 }
+
+/* project details */
+
+.details {
+  display: grid;
+  grid-template-rows: 5em 1fr;
+}
+
+.details > header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.details > header > .info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.details > header > .info > h1 {
+  margin: 0 1.5em;
+}
+
+.details > header > .info > h5 {
+  margin-top: 2.5em;
+}
+
+.details > header > .terminal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal > form {
+  width: 100%;
+}
+
+.terminal > form > input[type='text'] {
+  width: 60%;
+  min-width: 200px;
+  font-family: monospace;
+}
+
+.terminal > form > input[type='submit'] {
+  height: 100%;
+}
+
+/* tasks */
+
+.tasks {
+  display: grid;
+  grid-template-columns: 16em 1fr;
+}
+
+.active {
+  font-size: .8em;
+  text-align: center;
+}
+
+.active > ul {
+  list-style-type: none;
+  padding: 1.2em;
+  text-align: left;
+}
+
+.active > ul > li {
+  margin: 0;
+  padding: 0;
+}
+
+.active > ul > li::before {
+  content: '- ';
+}
+
+/* steps */
+
+.steps-table {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.step {
+  max-height: calc(100vh - 10em);
+  min-width: 400px;
+
+  height: calc(100vh - 10em);
+  overflow-y: auto;
+}
+
+.step > header {
+  text-align: center;
+  font-size: .9em;
+}
+
+.step > header > h1 {
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.step > header > h5 {
+  margin-top: .4em;
+}
+
+.step-task-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+}
+
+.step-task {
+  margin: 1em 0;
+  display: inline-block;
+}
+
+/* special classes */
+
+.outline {
+  padding: .2em .8em;
+}
+
+.outline.red {
+  background: rgba(231, 76, 60, 0.37);
+}
+
+.outline.green {
+  background: rgba(39, 173, 96, 0.37);
+}
+
+.outline.blue {
+  background: rgba(41, 128, 185, 0.37);
+}
+
+.outline.orange {
+  background: rgba(210, 84, 0, 0.37);
+}
+
+.outline.purple {
+  background: rgba(142, 68, 173, 0.37);
+}

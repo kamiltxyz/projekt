@@ -1,8 +1,9 @@
+import random
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 
-from projekt_core.models import Project
-from .forms import NewProjectForm
+from projekt_core.models import Project, create_step
+from .forms import NewProjectForm, TerminalForm
 
 
 # Projects
@@ -36,5 +37,23 @@ def projects_list(request):
     return render(request, "projekt_web/project_list.html", {'projects': projects})
 
 def project_details(request, project_slug):
-    project = get_object_or_404(Project, slug=project_slug),
-    return render(request, "projekt_web/project_details.html", {'project':project[0]})
+    project = get_object_or_404(Project, slug=project_slug)
+
+    if request.method == 'POST':
+        form = TerminalForm(request.POST)
+
+        if form.is_valid():
+            command = form.cleaned_data['command'].split(' ')
+
+            if len(command) > 1:
+                if command[0] == 'as':
+                    if len(command) > 2:
+                        create_step(project, command[1])
+
+    else:
+        form = TerminalForm()
+
+    return render(request, "projekt_web/project_details.html", {
+        'project':project,
+        'form':form,
+    })
