@@ -29,6 +29,11 @@ nav {
 
 .nav-item {
   display: inline-block;
+  color: black;
+}
+
+.nav-item > a {
+  color: inherit;
 }
 
 /* container */
@@ -171,6 +176,7 @@ footer {
 
   flex-direction: row;
   justify-content: flex-start;
+
 }
 
 /* project details */
@@ -252,10 +258,12 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  overflow-x: auto;
 }
 
 .step {
-  max-height: calc(100vh - 10em);
+  max-height: calc(100vh - 12em);
   min-width: 400px;
 
   height: calc(100vh - 10em);
@@ -286,7 +294,13 @@ footer {
 
 .step-task {
   margin: 1em 0;
+  margin-bottom: .4em;
   display: inline-block;
+}
+
+.step-task-time {
+  margin: 0;
+  font-size: .8em;
 }
 
 /* special classes */

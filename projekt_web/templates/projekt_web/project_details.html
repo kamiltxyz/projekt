@@ -3,7 +3,7 @@
 <div class="details">
   <header>
     <div class="info">
-      <h1>{{ project.title }}</h1>
+      <h1>{{ project }}</h1>
       <h5>time spent: {{ project.time_spent }}</h5>
     </div>
     <div class="terminal">
@@ -27,20 +27,27 @@
     <div class="active">
       <h1>active tasks</h1>
       <ul>
-        <li>some fucking style</li>
-        <li>idk some shit nobody cares</li>
+        {% for task in active_tasks %}
+            <li class="step-task outline {{ task.color }}">{{ task }}</li>
+            <li class="step-task-time">({{ task.time_spent }})</li>
+        {% endfor %}
       </ul>
     </div>
     <div class="steps-table">
       {% for step in project.step_set.all %}
         <div class="step">
           <header>
-            <h1 class="outline red">{{ step.title }}</h1>
+            <h1 class="outline red">{{ step }}</h1>
             <br>
             <h5>time spent: {{ step.time_spent }}</h5>
           </header>
 
           <ul class="step-task-list">
+            {% for task in step.task_set.all %}
+            <li class="step-task outline {{ task.color }}">{{ task }}</li>
+            <li class="step-task-time">({{ task.time_spent }})</li>
+            <br>
+            {% endfor %}
           </ul>
         </div>
       {% endfor %}
