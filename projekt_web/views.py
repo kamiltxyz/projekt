@@ -1,8 +1,8 @@
 import random
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
-from projekt_core.models import Project, create_step
+from projekt_core.models import Project, create_step, remove_step
 from .forms import NewProjectForm, TerminalForm
 
 
@@ -49,6 +49,11 @@ def project_details(request, project_slug):
                 if command[0] == 'as':
                     if len(command) >= 2:
                         create_step(project, command[1])
+                elif command[0] == 'rs':
+                    if len(command) >= 2:
+                        remove_step(project, command[1])
+
+            return redirect('project_details', project_slug=project_slug)
 
     else:
         form = TerminalForm()
